@@ -58,7 +58,7 @@ func NewNonKeyAttributes() []*dynamodb.AttributeDefinition {
 		{AttributeName: aws.String("timestamp"), AttributeType: aws.String("S")},
 		{AttributeName: aws.String("location"), AttributeType: aws.String("S")},
 		{AttributeName: aws.String("reactions"), AttributeType: aws.String("M")},
-		{AttributeName: aws.String("followdUser"), AttributeType: aws.String("S")},
+		{AttributeName: aws.String("followedUser"), AttributeType: aws.String("S")},
 		{AttributeName: aws.String("followingUser"), AttributeType: aws.String("S")},
 	}
 	return xs
