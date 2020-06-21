@@ -38,8 +38,6 @@ func Run() {
 			fmt.Printf("lib.Unmarshal(%s): %+v\n", str, err)
 		}
 	}
-	fmt.Printf("%+v\n", users[0])
-	fmt.Printf("%+v\n", rctns[0])
-	fmt.Printf("%+v\n", fships[0])
-	fmt.Printf("%+v\n", photos[0])
+	ufct := lib.NewUserFacet(users)
+	fmt.Printf("%#v\n", *ufct)
 }
