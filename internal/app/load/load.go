@@ -40,6 +40,13 @@ func Run() {
 		}
 	}
 	ufct := lib.NewUserFacet(users)
-	bs, err := json.Marshal(ufct)
+	rfct := lib.NewReactionFacet(rctns)
+	ffct := lib.NewFriendshipFacet(fships)
+	pfct := lib.NewPhotoFacet(photos)
+	facets := []*lib.Facet{ufct, rfct, ffct, pfct}
+	bs, err := json.Marshal(facets)
+	if err != nil {
+		panic(err)
+	}
 	fmt.Println(string(bs))
 }
