@@ -44,7 +44,14 @@ func Run() {
 	ffct := lib.NewFriendshipFacet(fships)
 	pfct := lib.NewPhotoFacet(photos)
 	facets := []*lib.Facet{ufct, rfct, ffct, pfct}
-	bs, err := json.Marshal(facets)
+	tbl := lib.NewTable()
+	tbl.TableFacets = facets
+	dmodel := lib.DataModel{
+		ModelName:     "mobile-app",
+		ModelMetadata: lib.NewModelMetadata(),
+		DataModel:     []*lib.Table{tbl},
+	}
+	bs, err := json.Marshal(dmodel)
 	if err != nil {
 		panic(err)
 	}

@@ -8,10 +8,10 @@ import (
 type Reaction struct {
 	PK           string
 	SK           string
-	ReactingUser string `json:"reactingUser"`
-	Photo        string `json:"photo"`
-	ReactionType string `json:"reactionType"`
-	Timestamp    string `json:"timestamp"`
+	ReactingUser string `json:"reactingUser" dynamo:"reactingUser"`
+	Photo        string `json:"photo" dynamo:"photo"`
+	ReactionType string `json:"reactionType" dynamo:"reactionType"`
+	Timestamp    string `json:"timestamp" dynamo:"timestamp"`
 }
 
 func NewReactionFacet(rs []*Reaction) *Facet {

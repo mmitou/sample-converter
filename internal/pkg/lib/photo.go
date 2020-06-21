@@ -15,10 +15,10 @@ type ReactionCounter struct {
 type Photo struct {
 	PK        string
 	SK        string
-	Username  string          `json:"username"`
-	Timestamp string          `json:"timestamp"`
-	Location  string          `json:"location"`
-	Reactions ReactionCounter `json:"reactions"`
+	Username  string          `json:"username" dynamo:"username"`
+	Timestamp string          `json:"timestamp" dynamo:"timestamp"`
+	Location  string          `json:"location" dynamo:"location"`
+	Reactions ReactionCounter `json:"reactions" dynamo:"reactions"`
 }
 
 func NewPhotoFacet(ps []*Photo) *Facet {

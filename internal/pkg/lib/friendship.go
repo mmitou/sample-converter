@@ -8,9 +8,9 @@ import (
 type Friendship struct {
 	PK            string
 	SK            string
-	FollowedUser  string `json:"followdUser"`
-	FollowingUser string `json:"followingUser"`
-	Timestamp     string `json:"timestamp"`
+	FollowedUser  string `json:"followdUser" dynamo:"followdUser"`
+	FollowingUser string `json:"followingUser" dynamo:"followingUser"`
+	Timestamp     string `json:"timestamp" dynamo:"timestamp"`
 }
 
 func NewFriendshipFacet(fs []*Friendship) *Facet {
