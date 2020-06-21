@@ -2,6 +2,7 @@ package load
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 
 	"os"
@@ -39,5 +40,6 @@ func Run() {
 		}
 	}
 	ufct := lib.NewUserFacet(users)
-	fmt.Printf("%#v\n", *ufct)
+	bs, err := json.Marshal(ufct)
+	fmt.Println(string(bs))
 }
